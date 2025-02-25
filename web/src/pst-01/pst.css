@@ -1,0 +1,59 @@
+:root {
+    --color-pink: #FF264B; 
+    --color-gray: #B3B3B3;
+    --color-lightgray: #DBDBDB;
+
+    --fontweight-6: 600;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 20px;
+
+    border-bottom: 1px solid var(--color-gray);
+}
+
+.logo-image {
+    width: auto;
+    height: 30px;
+}
+
+.double-itens {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+span.value {
+    border: 1px solid var(--color-gray);
+    border-radius: 5px;
+    padding: 5px;
+
+    font-weight: var(--fontweight-6);
+}
+
+button {
+    background-color: var(--color-pink);
+    color: white;
+    font-weight: var(--fontweight-6);
+
+    border: initial;
+    border-radius: 5px;
+
+    padding: 7px;
+}
+
+main {
+
+}
+
+span.bar {
+    display: block;
+    margin: 20px auto;
+    height: 10px;
+    width: 95%;
+    border-radius: 10px;
+    background-color: var(--color-lightgray);
+} 
