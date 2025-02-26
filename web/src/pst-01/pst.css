@@ -37,7 +37,7 @@ span.value {
 
 button.sake {
     background-color: var(--color-pink);
-    color: white;
+    color: #FFFFFF;
     font-weight: var(--fontweight-6);
 
     border: initial;
@@ -76,7 +76,7 @@ p.legend {
 
     font-size: 14px;
 
-    margin: 20px 0;
+    margin: 15px 0;
 }
 
 .options {
@@ -114,4 +114,23 @@ button.option {
 
 .option-check {
     width: 20px;
+}
+
+.continue {
+    display: block;
+    
+    width: 95%;
+    
+    margin: 20px auto;
+
+    background-color: var(--color-pink);
+    color: #FFFFFF;
+    
+    font-weight: var(--fontweight-6);
+    font-size: 18px;
+
+    border: initial;
+    border-radius: 10px;
+    
+    padding: 20px;
 }

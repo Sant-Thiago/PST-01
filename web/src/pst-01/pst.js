@@ -68,6 +68,8 @@ function Pst() {
                     ))
                 }
             </div>
+
+            <button className="continue">Continuar</button>
         </main>
     </>
     );
