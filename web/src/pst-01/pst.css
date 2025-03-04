@@ -101,6 +101,12 @@ button.option {
     padding: 0 10px;
 
     background-color: transparent;
+    transition: .2s ease;
+}
+
+button.option-selected {
+    transform: scale(1.05);
+    border: 1px solid var(--color-pink);
 }
 
 .emoji {
@@ -114,6 +120,7 @@ button.option {
 
 .option-check {
     width: 20px;
+    accent-color: var(--color-pink);
 }
 
 .continue {
@@ -127,10 +134,47 @@ button.option {
     color: #FFFFFF;
     
     font-weight: var(--fontweight-6);
-    font-size: 18px;
+    font-size: 20px;
 
     border: initial;
     border-radius: 10px;
     
-    padding: 20px;
+    padding: 15px 20px;
+}
+
+.emotion-text {
+    margin: auto;
+    
+    width: fit-content;
+    padding: 5px 15px;
+    
+    background-color: #defff3;
+    color: #387548;
+
+    border-radius: 5px;
+
+    font-size: 18px;
+    font-weight: var(--fontweight-6);
+    text-align: center;
+}
+
+footer {
+    border-top: 1px solid var(--color-gray);
+
+    margin-top: 40px;
+
+    height: 150px;
+}
+
+p.conditions {
+    margin: 20px auto;
+    width: 80%;
+    font-size: 14px;
+}
+
+p.firula {
+    margin: 20px auto;
+    width: 90%;
+    font-size: 14px;
+    color: var(--color-gray);
 }

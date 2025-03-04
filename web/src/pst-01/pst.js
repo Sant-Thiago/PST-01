@@ -11,7 +11,7 @@ import "./pst.css"
 
 function Pst() {
     const [value, setValue] = useState(0);
-    const [selectedCheckbox, setSelectedCheckbox] = useState(null);
+    const [optionSelected, setOptionSelected] = useState(null);
 
     const [ texts ] = useState(["Como você avalia sua experiência geral no TikTok?"]);
     const [ assessments ] = useState([
@@ -21,8 +21,8 @@ function Pst() {
         { emoji: unamused, text: "Ruim" }
     ]);
 
-    const handleChangeCheckbox = (index) => {
-        setSelectedCheckbox(index)
+    const handleClickOption = (index,) => {
+        setOptionSelected(index)
     }
 
   return (
@@ -50,10 +50,10 @@ function Pst() {
                 {
                     assessments.map((it, idx) => (
                         <button 
-                            className="option" 
+                            className={optionSelected === idx ? "option-selected option" : "option"} 
                             key={idx}
                             value={idx}
-                            onClick={() => handleChangeCheckbox(idx)}
+                            onClick={() => handleClickOption(idx)}
                         >
                             <div className="double-itens">
                                 <img 
@@ -63,14 +63,22 @@ function Pst() {
                                 />
                                 <p className="option-text">{it.text}</p>
                             </div>
-                            <input type="checkbox" className="option-check" checked={selectedCheckbox === idx} readOnly/>
+                            <input type="checkbox" className="option-check" checked={optionSelected === idx} readOnly/>
                         </button>
                     ))
                 }
             </div>
 
             <button className="continue">Continuar</button>
+
+            <p className="emotion-text">Concorra a um bônus adicional</p>
         </main>
+
+        <footer>
+            <p className="conditions">Ao participar das atividades de recompensa, você concorda com nossos <a href="https://www.tiktok.com/legal/page/row/terms-of-service/pt-BR" target="_blank">Termos e Codições</a>.</p>
+            
+            <p className="firula">Os valores deste programa são simbólicos e convertidos para materiais em curso que custam o valor que ganhou.</p>
+        </footer>
     </>
     );
 }
