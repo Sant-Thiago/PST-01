@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Modal, Box, Typography } from "@mui/material";
 import "./counterModal.css";
 
-function CounterModal({ open, setOpen }) {
+function CounterModal({ open, setOpen, maxValue }) {
   const [count, setCount] = useState(0.0);
 
   useEffect(() => {
@@ -11,8 +11,8 @@ function CounterModal({ open, setOpen }) {
     if (open) {
       setCount(0);
       interval = setInterval(() => {
-        setCount((prev) => (prev < 100 ? prev + Math.random() * 5 : 100));
-      }, 50);
+        setCount((prev) => (prev < maxValue ? prev + Math.random() * 5 : maxValue));
+      }, 25);
     }
 
     return () => clearInterval(interval);
