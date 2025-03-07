@@ -178,3 +178,10 @@ p.firula {
     font-size: 14px;
     color: var(--color-gray);
 }
+
+.mensagem-erro{
+    color: red;
+    font-size: 14px;
+    text-align: center;
+    margin-top: 10px;
+}

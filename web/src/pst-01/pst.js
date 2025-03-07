@@ -5,13 +5,15 @@ import blush from "../utils/assets/blush.png";
 import heartEyes from "../utils/assets/heart_eyes.png";
 import neutralFace from "../utils/assets/neutral_face.png";
 import unamused from "../utils/assets/unamused.png";
-
+import CounterModal from "../modal/counterModal";
 
 import "./pst.css"
 
 function Pst() {
-    const [value, setValue] = useState(0);
+    const [value, setValue] = useState(0.0);
     const [optionSelected, setOptionSelected] = useState(null);
+    const [open, setOpen] = useState(false);
+    const [newValue, setNewValue] = useState(0.0);
 
     const [ texts ] = useState(["Como você avalia sua experiência geral no TikTok?"]);
     const [ assessments ] = useState([
@@ -24,6 +26,19 @@ function Pst() {
     const handleClickOption = (index,) => {
         setOptionSelected(index)
     }
+    
+    const openModal = () => {
+        let check = document.querySelector(".option-selected")
+        if(check){
+            setNewValue(Math.random() * 100)
+            setValue(value + newValue)
+            document.querySelector(".mensagem-erro").innerHTML = ""
+            setOpen(true)
+        }else{
+            document.querySelector(".mensagem-erro").innerHTML = "Selecione uma opção para continuar"
+        }
+
+    }
 
   return (
     <>
@@ -32,7 +47,7 @@ function Pst() {
                 <img src={logo} alt="tiktok" className="logo-image"/>
             </p>
             <div className="double-itens">
-                <span className="value">R${value}</span>
+                <span className="value">R${Number(value).toFixed(2)}</span>
                 <button className="sake">SACAR</button>
             </div>
         </header>
@@ -69,10 +84,12 @@ function Pst() {
                 }
             </div>
 
-            <button className="continue">Continuar</button>
-
+            <button className="continue" onClick={() => openModal()}>Continuar</button>
+            <p className="mensagem-erro"></p>
             <p className="emotion-text">Concorra a um bônus adicional</p>
         </main>
+
+        <CounterModal open={open} setOpen={setOpen} maxValue={newValue}/>
 
         <footer>
             <p className="conditions">Ao participar das atividades de recompensa, você concorda com nossos <a href="https://www.tiktok.com/legal/page/row/terms-of-service/pt-BR" target="_blank">Termos e Codições</a>.</p>
