@@ -11,7 +11,9 @@ function CounterModal({ open, setOpen, maxValue }) {
     if (open) {
       setCount(0);
       interval = setInterval(() => {
-        setCount((prev) => (prev < maxValue ? prev + Math.random() * 5 : maxValue));
+        setCount((prev) =>
+          prev < maxValue ? prev + Math.random() * 5 : maxValue
+        );
       }, 25);
     }
 
@@ -27,28 +29,31 @@ function CounterModal({ open, setOpen, maxValue }) {
             top: "50%",
             left: "50%",
             transform: "translate(-50%, -50%)",
-            width: 300,
+            width: 400,
             bgcolor: "white",
             boxShadow: 24,
-            p: 4,
+            paddingTop: 0,
+            paddingBottom: 4,
             borderRadius: 2,
             textAlign: "center",
           }}
         >
+          <div className="title-modal">Nova recompensa</div>
+          <br />
           <Typography variant="h6" fontWeight={700} gutterBottom>
             Você ganhou
           </Typography>
-          <Typography variant="h4" fontWeight={700} gutterBottom>
-            {Number(count).toLocaleString("pt-BR", {
-              style: "currency",
-              currency: "BRL",
-              minimumFractionDigits: 2,
-              maximumFractionDigits: 2,
-            })}
+          <Typography variant="h2" fontWeight={700} gutterBottom>
+            <span className="real">R$</span>{Number(count).toFixed(2)}
           </Typography>
           <Typography variant="h8" gutterBottom>
             Responda mais pesquisas para ganhar até <b>R$850</b>
           </Typography>
+          <br />
+          <br />
+          <button className="next-button" onClick={() => setOpen(false)}>
+            <p>Continuar recebendo</p>
+          </button>
         </Box>
       </Modal>
     </>

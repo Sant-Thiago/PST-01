@@ -110,7 +110,7 @@ button.option-selected {
 }
 
 .emoji {
-    height: 30px;
+    font-size: 30px;
 }
 
 .option-text {
