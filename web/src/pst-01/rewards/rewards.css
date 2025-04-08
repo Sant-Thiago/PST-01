@@ -1,0 +1,97 @@
+
+.header {
+    padding: 5px;
+}
+
+.container-saldo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: black;
+    padding: 15px 25px;
+
+    border-radius: 20px;
+}
+
+.saldo {
+    color: white;
+    height: 50px;
+}
+
+.saldo > * {
+    margin: 0;
+}
+
+.saldo > h2 {
+    font-size: 36px;
+    font-weight: 800;
+}
+
+.container-saldo > img {
+    height: 100px;
+}
+
+.container-last-rewards {
+    background-color: black;
+    border-top: 1px dashed rgb(131, 131, 131);
+
+    padding: 5px 20px;
+    border-radius: 10px;
+}
+
+.container-last-rewards > p {
+    color: #a1a1a1;
+    font-size: 14px;
+    margin: 0;
+}
+
+.container-sake {
+    
+}
+
+.container-sake > p {
+    display: flex;
+    align-items: center;
+
+    color: #838383;
+}
+
+.cartoes {
+    height: 30px;
+    margin-right: 10px;
+}
+
+.pix {
+    height: 35px;
+    margin-left: 5px;
+}
+
+.pay-options {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.pay-option:nth-child(4) {
+    grid-column: 1 / -1;;
+}
+
+.pay-option {
+    margin: 0;
+    background-color: #e2e2e2;
+    padding: 15px;
+    border-radius: 10px;
+    border: none;
+
+    font-size: 16px;
+
+    cursor: pointer;;
+}
+
+.option-selected {
+    color: var(--color-pink);
+    font-weight: 600;
+    transform: scale(1.05);
+    border: 2px solid var(--color-pink);
+}
