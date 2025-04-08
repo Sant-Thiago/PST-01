@@ -9,6 +9,15 @@ function Rewards({ total = 0 }) {
 
     const [optionSelected, setOptionSelected] = useState(0);
     const [payOptions] = useState([ 1.5, 5, 10, total ]);
+    const [keyPix, setKeyPix] = useState(null);
+    const [keyType, setKeyType] = useState(null);
+
+    const handleFinishSake = () => {
+        if (keyType == null) alert("SELECIONE UMA TIPO DE CHAVE")
+        else {
+            alert('Funcionou aqui a chave: ' + keyPix);
+        }
+    }
 
     return (
         <>
@@ -50,18 +59,21 @@ function Rewards({ total = 0 }) {
                 </div>
 
                 <div className="container-pix">
-                    <select defaultValue={0}>
-                        <option value={0} hidden>Selecione o tipo de chave: </option>
-                        <option value={"cpf"}>CPF</option>
-                        <option value={"email"}>E-mail</option>
-                        <option value={"phone"}>Telefone</option>
-                        <option value={"random-key"}>Chave Aleatória</option>
+                    <select 
+                        value={keyType} 
+                        onChange={(e) => setKeyType(e.currentTarget.value)}
+                    >
+                        <option value="" hidden>Selecione o tipo de chave: </option>
+                        <option value="cpf">CPF</option>
+                        <option value="email">E-mail</option>
+                        <option value="phone">Telefone</option>
+                        <option value="random-key">Chave Aleatória</option>
                     </select>
 
-                    <input type="text" id="iptKey" placeholder="Digite a sua chave PIX" />
+                    <input type="text" value={keyPix} onChange={(e) => {setKeyPix(e.currentTarget.value)}} placeholder="Digite a sua chave PIX" />
                 
                     <button 
-                        onClick={() => { alert('Funcionou') }}
+                        onClick={() => { handleFinishSake() }}
                     >
                         Realizar Saque
                     </button>
