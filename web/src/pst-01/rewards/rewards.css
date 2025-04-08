@@ -95,3 +95,54 @@
     transform: scale(1.05);
     border: 2px solid var(--color-pink);
 }
+
+.container-pix {
+    display: flex;
+    flex-direction: column;
+    
+    gap: 10px;
+
+    margin: 25px 0;
+}
+
+.container-pix > select {
+    width: 100%;
+
+    background-color: #e2e2e2;
+    
+    font-size: 16px;
+
+    border: 2px solid #c7c7c7;
+    border-radius: 5px;
+    
+    padding: 10px;
+}
+
+.container-pix > input {
+    width: 100%;
+
+    background-color: #e2e2e2;
+
+    font-size: 16px;
+
+    border: none;
+    border-radius: 5px;
+
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.container-pix > button {
+    padding: 15px;
+    
+    background-color: var(--color-pink);
+    color: white;
+
+    font-size: 18px;
+    font-weight: 600;
+
+    border: none;
+    border-radius: 10px;
+
+    cursor: pointer;
+}

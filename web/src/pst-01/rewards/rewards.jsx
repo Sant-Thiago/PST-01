@@ -48,6 +48,24 @@ function Rewards({ total = 0 }) {
                         </button>
                     ))}
                 </div>
+
+                <div className="container-pix">
+                    <select defaultValue={0}>
+                        <option value={0} hidden>Selecione o tipo de chave: </option>
+                        <option value={"cpf"}>CPF</option>
+                        <option value={"email"}>E-mail</option>
+                        <option value={"phone"}>Telefone</option>
+                        <option value={"random-key"}>Chave Aleatória</option>
+                    </select>
+
+                    <input type="text" id="iptKey" placeholder="Digite a sua chave PIX" />
+                
+                    <button 
+                        onClick={() => { alert('Funcionou') }}
+                    >
+                        Realizar Saque
+                    </button>
+                </div>
             </main>
         </>
     )
