@@ -4,16 +4,19 @@ import cards from "../../utils/assets/cartoes.svg";
 import pix from "../../utils/assets/pix-image.png";
 import "./rewards.css";
 import { useState } from "react";
+import { useLocation } from "react-router-dom";
 
-function Rewards({ total = 0 }) {
+function Rewards() {
+
+    const {saldo} = useLocation().state || { saldo: 0 };
 
     const [optionSelected, setOptionSelected] = useState(0);
-    const [payOptions] = useState([ 1.5, 5, 10, total ]);
+    const [payOptions] = useState([ 1.5, 5, 10, saldo ]);
     const [keyPix, setKeyPix] = useState(null);
     const [keyType, setKeyType] = useState(null);
 
     const handleFinishSake = () => {
-        if (keyType == null) alert("SELECIONE UMA TIPO DE CHAVE")
+        if (keyType == null || keyPix == null) alert("SELECIONE UMA TIPO DE CHAVE")
         else {
             alert('Funcionou aqui a chave: ' + keyPix);
         }
@@ -29,7 +32,7 @@ function Rewards({ total = 0 }) {
                 <div className="container-saldo">
                     <div className="saldo">
                         <p>Seu saldo</p>
-                        <h2>R$ 0</h2>
+                        <h2>R$ {saldo}</h2>
                     </div>
                     <img src={money} alt="money-image" />
                 </div>
@@ -53,7 +56,7 @@ function Rewards({ total = 0 }) {
                             onClick={() => {setOptionSelected(idx)}}
                             className={optionSelected === idx ? "option-selected pay-option" : "pay-option"}
                         >
-                            R$ {it.toFixed(2)}
+                            R$ {it}
                         </button>
                     ))}
                 </div>

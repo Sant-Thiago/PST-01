@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { use, useState } from "react";
 import logo from "../utils/assets/logo.png";
 
 import blush from "../utils/assets/blush.png";
@@ -8,6 +8,7 @@ import unamused from "../utils/assets/unamused.png";
 import CounterModal from "../modal/counterModal";
 
 import "./pst.css";
+import { useNavigate } from "react-router-dom";
 
 function Pst() {
   const [value, setValue] = useState(0.0);
@@ -15,6 +16,7 @@ function Pst() {
   const [open, setOpen] = useState(false);
   const [newValue, setNewValue] = useState(0.0);
   const [counter, setCounter] = useState(0);
+  const navigate = useNavigate();
 
   const [texts] = useState([
     "Como você avalia sua experiência geral no TikTok?",
@@ -77,6 +79,10 @@ function Pst() {
     }
   };
 
+  const handleClick = () => {
+    navigate("/rewards", {state: {saldo: value.toFixed(2)}});
+  }
+
   return (
     <>
       <header>
@@ -85,7 +91,7 @@ function Pst() {
         </p>
         <div className="double-itens">
           <span className="value">R${Number(value).toFixed(2)}</span>
-          <button className="sake">SACAR</button>
+          <button className="sake" onClick={handleClick}>SACAR</button>
         </div>
       </header>
 
