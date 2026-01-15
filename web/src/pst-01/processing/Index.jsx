@@ -1,14 +1,18 @@
 import { useEffect, useState } from "react";
 import logo from "../../utils/assets/logo.png";
 import "./Index.css";
+import { useNavigate } from "react-router-dom";
 
 export default function Processing() {
     
     const [progress, setProgress] = useState(0);
     const [text, setText] = useState("Validando dados...");
+    const navigate = useNavigate();
 
     useEffect(() => {
-        if (progress >= 100) return;
+        if (progress >= 100) {
+            navigate("/confirmation");
+        }
 
         const timeout = setTimeout(() => {
             setProgress((prev) => {
@@ -18,6 +22,9 @@ export default function Processing() {
                 if (next >= 50) {
                     setText("Concluindo resgate...");
                 }
+                if (next >= 85) {
+                    setText("Quase pronto...");
+                }
 
                 return next;
             });
@@ -25,6 +32,7 @@ export default function Processing() {
 
         return () => clearTimeout(timeout);
     }, [progress]);
+
 
     return (
         <>

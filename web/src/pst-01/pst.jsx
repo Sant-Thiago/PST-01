@@ -113,7 +113,7 @@ function Pst() {
 			></span>
 		</span>
 
-		<main>
+		<main className="pst">
 			<h2 className="title">{texts[counter]}</h2>
 
 			<p className="legend">Selecione uma opção para continuar:</p>

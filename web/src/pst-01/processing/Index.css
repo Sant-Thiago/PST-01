@@ -8,7 +8,6 @@
 }
 
 body {
-    background-color: #cccccc;
     height: 100vh;
 }
 
@@ -19,6 +18,7 @@ body {
 header.processing {
     padding: 16px;
     width: 100%;
+    background-color: #cccccc;
 }
 
 .logo {
@@ -30,6 +30,7 @@ header.processing {
 main.processing {
     width: 100%;
     height: calc(100vh - 72px);
+    background-color: #cccccc;
 
     position: relative;
 }

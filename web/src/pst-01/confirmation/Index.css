@@ -1,0 +1,122 @@
+:root {
+    --color-pink: #FF264B; 
+    --color-gray: #B3B3B3;
+    --color-lightgray: #DBDBDB;
+
+    --fontweight-6: 600;
+    --max-width: 900px;
+}
+
+header.confirmation {
+    padding: 16px;
+    width: 100%;
+}
+
+.logo {
+    display: block;
+    height: 40px;
+    margin: auto;
+}
+
+main.confirmation { 
+    padding: 24px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+main.confirmation > .container-saldo {
+    width: 90%;
+    max-width: var(--max-width);
+    margin: auto;
+}
+
+
+main.confirmation > .age-container {
+    width: 90%;
+    margin: auto;
+    max-width: var(--max-width);
+    border: 2px solid #d3d3d3;
+
+    border-radius: 20px;
+    padding: 24px;
+    
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+main.confirmation > .age-container > p,
+main.confirmation > .data-container > p {
+    margin: 0;
+    color: rgb(105, 105, 105);
+}
+
+main.confirmation > .age-container > p.title,
+main.confirmation > .data-container > p.title {
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+main.confirmation > .age-container > .container-taxa {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+main.confirmation > .age-container > .container-taxa > .taxa {
+    color: var(--color-pink);
+    font-size: 28px;
+    margin: 0;
+}
+
+main.confirmation > .age-container > .container-taxa > .valor {
+    background-color: rgb(174, 255, 174);
+    color: green;
+    font-weight: 700;
+    padding: 5px 8px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+main.confirmation > .age-container > p > span.highlight {
+    color: #000000;
+}
+
+main.confirmation > .data-container {
+    width: 90%;
+    max-width: var(--max-width);
+    margin: auto;
+
+    border: 2px solid #d3d3d3;
+
+    border-radius: 20px;
+    padding: 24px;
+    
+    display: flex;
+    flex-direction: column;
+    gap: 16px;   
+}
+
+main.confirmation > .data-container > .container-divs {
+    margin: 0;
+}
+
+main.confirmation > .data-container > .container-divs > div { 
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-bottom: 2px solid #d3d3d3;
+}
+
+main.confirmation > .data-container > .container-divs > div > p { 
+    color: rgb(105, 105, 105);
+}
+
+main.confirmation > .data-container > .container-divs > div > span { 
+    font-weight: 600;
+}
