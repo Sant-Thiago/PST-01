@@ -1,10 +1,10 @@
-
+import { ChevronLeft } from "lucide-react";
 import money from "../../utils/assets/image-removebg-preview.png";
 import cards from "../../utils/assets/cartoes.svg";
 import pix from "../../utils/assets/pix-image.png";
 import "./rewards.css";
 import { useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 function Rewards() {
 
@@ -15,20 +15,30 @@ function Rewards() {
     const [keyPix, setKeyPix] = useState(null);
     const [keyType, setKeyType] = useState(null);
 
+    const navigate = useNavigate();
+
     const handleFinishSake = () => {
-        if (keyType == null || keyPix == null) alert("SELECIONE UMA TIPO DE CHAVE")
-        else {
-            alert('Funcionou aqui a chave: ' + keyPix);
+        if (keyType == null) {
+            alert("SELECIONE UMA TIPO DE CHAVE");
+            return; 
         }
+        if (keyPix == null || keyPix.trim().length == 0) {
+            alert("PREENCHA O CAMPO CHAVE PIX");
+            return;
+        }
+
+        navigate("/processing");
     }
 
     return (
         <>
-            <header>
-                &lt; Resgatar recompensas ?
+            <header className="header">
+                <ChevronLeft className="back-arrow"/> 
+                <h2>Resgatar Recompensas</h2>
             </header>
-            <main>
+            <main className="rewards">
 
+            <div className="container-saldo-master">
                 <div className="container-saldo">
                     <div className="saldo">
                         <p>Seu saldo</p>
@@ -36,9 +46,14 @@ function Rewards() {
                     </div>
                     <img src={money} alt="money-image" />
                 </div>
+
                 <div className="container-last-rewards">
                     <p>Últimas recompensas: R$54.87</p>
                 </div>
+
+            </div>
+
+            <div className="container-saldo-sake">
 
                 <div className="container-sake">
                     <h3>Sacar dinheiro</h3>
@@ -62,9 +77,13 @@ function Rewards() {
                 </div>
 
                 <div className="container-pix">
+                    <label htmlFor="name" className="label">Nome</label>
+                    <input type="text" id="name" placeholder="Seu nome" />
+                    <label htmlFor="type" className="label">Tipo de Chave PIX</label>
                     <select 
                         value={keyType} 
                         onChange={(e) => setKeyType(e.currentTarget.value)}
+                        id="type"
                     >
                         <option value="" hidden>Selecione o tipo de chave: </option>
                         <option value="cpf">CPF</option>
@@ -73,7 +92,8 @@ function Rewards() {
                         <option value="random-key">Chave Aleatória</option>
                     </select>
 
-                    <input type="text" value={keyPix} onChange={(e) => {setKeyPix(e.currentTarget.value)}} placeholder="Digite a sua chave PIX" />
+                    <label htmlFor="chave" className="label">Chave PIX</label>
+                    <input type="text" id="chave" value={keyPix} onChange={(e) => {setKeyPix(e.currentTarget.value)}} placeholder="Digite a sua chave PIX" />
                 
                     <button 
                         onClick={() => { handleFinishSake() }}
@@ -81,6 +101,8 @@ function Rewards() {
                         Realizar Saque
                     </button>
                 </div>
+            </div>
+
             </main>
         </>
     )

@@ -7,14 +7,20 @@
     --max-width: 900px;
 }
 
-header {
+.header {
+    border-bottom: 1px solid var(--color-gray);
+}
+
+.container-logo-pst {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 5px 20px;
 
-    border-bottom: 1px solid var(--color-gray);
+    width: 90%;
+    max-width: var(--max-width);
 }
+
+
 
 .logo-image {
     width: auto;
@@ -60,8 +66,23 @@ span.bar {
     border-radius: 10px;
     
     background-color: var(--color-lightgray);
+    
+    overflow: hidden;
 } 
 
+span.progress {
+    display: block;
+    width: 1%;
+    height: 100%;
+    
+    border-radius: 10px;
+    background-color: var(--color-pink);
+
+    transition: all 0.3s ease;
+
+}
+
+.back-arrow
 main {
     width: 85%;
     margin: auto;
@@ -87,6 +108,8 @@ p.legend {
     margin: auto;
 
     gap: 15px;
+
+    width: 90%;
 
     max-width: var(--max-width);
 }

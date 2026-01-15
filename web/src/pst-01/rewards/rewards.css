@@ -1,6 +1,47 @@
+:root {
+    --color-pink: #FF264B; 
+    --color-gray: #B3B3B3;
+    --color-lightgray: #DBDBDB;
+
+    --fontweight-6: 600;
+    --max-width: 900px;
+}
 
 .header {
+    display: flex;
+    
+    justify-content: center;
+
     padding: 5px;
+    position: relative;
+}
+
+.back-arrow {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+
+    stroke-width: 3;
+    font-size: 40px;
+
+    transform: translate(0, -50%);
+}
+
+main.rewards {
+    background-color: #d3d3d3;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 24px 0;
+    height: 100vh;
+}
+
+.container-saldo-master {
+    margin: 0 auto;
+
+    height: fit-content;
+    width: 90%;
+    max-width: var(--max-width);
 }
 
 .container-saldo {
@@ -10,7 +51,7 @@
 
     background-color: black;
     padding: 15px 25px;
-
+    
     border-radius: 20px;
 }
 
@@ -46,8 +87,30 @@
     margin: 0;
 }
 
+.container-saldo-sake {
+    width: 90%;
+    height: fit-content;
+    margin: 0 auto;
+
+    background-color: white;
+    border-radius: 20px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    padding: 25px;
+}
+
 .container-sake {
-    
+    display: flex;
+    flex-direction: column;
+    max-width: var(--max-width);
+    gap: 8px;
+}
+
+.container-sake > * {
+    margin: 0;
 }
 
 .container-sake > p {
@@ -105,6 +168,10 @@
     margin: 25px 0;
 }
 
+.container-pix > label.label {
+    font-weight: 600;
+}
+
 .container-pix > select {
     width: 100%;
 
@@ -112,7 +179,7 @@
     
     font-size: 16px;
 
-    border: 2px solid #c7c7c7;
+    border: none;
     border-radius: 5px;
     
     padding: 10px;

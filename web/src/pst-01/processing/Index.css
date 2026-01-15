@@ -1,0 +1,78 @@
+:root {
+    --color-pink: #FF264B; 
+    --color-gray: #B3B3B3;
+    --color-lightgray: #DBDBDB;
+
+    --fontweight-6: 600;
+    --max-width: 900px;
+}
+
+body {
+    background-color: #cccccc;
+    height: 100vh;
+}
+
+#root {
+    height: 100vh;
+}
+
+header.processing {
+    padding: 16px;
+    width: 100%;
+}
+
+.logo {
+    display: block;
+    height: 40px;
+    margin: auto;
+}
+
+main.processing {
+    width: 100%;
+    height: calc(100vh - 72px);
+
+    position: relative;
+}
+
+.container-processing {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    display: flex;
+    flex-direction: column;
+
+    width: 80%;
+    max-width: var(--max-width);
+
+    gap: 24px;
+}
+
+.container-processing > p.valid {
+    font-size: 28px;
+    font-weight: 600;
+    color: rgb(90, 90, 90);
+
+    margin: 0;
+    text-align: center;
+}
+
+.container-processing > span.bar {
+    height: 12px;
+    width: 100%;
+
+    border-radius: 10px;
+}
+
+.container-processing > span.bar > span.progress {
+    height: 100%;
+    width: 1%;
+
+    border-radius: 10px;
+
+    color: var(--color-pink);
+
+    transition: all ease .3s;
+}
